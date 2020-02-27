@@ -108,7 +108,7 @@ section:nth-child(2n+1) .inner h3 {
 	display: block;
 	opacity: 0;
 	transform: translateY(90px);
-	transition: all 0.8s 0.3s;
+	transition: transform 0.8s, opacity 0.3s;
 }
 #main .keytext p span:nth-child(1) {
 	transition-delay: 0.8s;
@@ -130,6 +130,7 @@ section:nth-child(2n+1) .inner h3 {
 #tool .inner ul {
 	width: 810px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 #tool .inner ul li {
 	float: left;
@@ -137,19 +138,37 @@ section:nth-child(2n+1) .inner h3 {
 	height: 200px;
 	margin-left: 30px;
 	margin-top: 30px;
-	padding-top: 25px;
-	border: 1px solid #ccc;
+	overflow: hidden;
+	transition: transform 0.3s;
 }
 #tool .inner ul li:nth-child(4n+1) {
 	margin-left: 0;
 }
 #tool .inner ul li p {
+	padding-top: 25px;
+	border: 1px solid #ccc;
 	font-size: 30px;
 	line-height: 65px;
 	text-align: center;
+	opacity: 0;
+	transform: translateY(90px);
+	transition: transform 0.8s, opacity 0.3s;
+}
+#tool .inner ul li:nth-child(2) p,
+#tool .inner ul li:nth-child(4) p,
+#tool .inner ul li:nth-child(5) p,
+#tool .inner ul li:nth-child(7) p {
+	transform: translateY(-90px);
+}
+#tool.active .inner ul li p {
+	opacity: 1;
+	transform: translateY(0);
 }
 #tool .inner ul li p img {
 	width: 100px;
+}
+#tool .inner ul li:hover {
+	transform: translateY(5px);
 }
 
 /* 어바웃 */
@@ -157,77 +176,86 @@ section:nth-child(2n+1) .inner h3 {
 	padding: 70px 0;
 	text-align: center;
 }
-
+div.jqcloud span {
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.8s;
+}
+div.jqcloud span:hover {
+	transform: scale(1.1);
+}
+#about.active div.jqcloud span {
+	opacity: 1;
+}
 div.jqcloud {
 	font-family: "Helvetica", "Arial", sans-serif;
 	color: #09f;
 	overflow: hidden;
 	position: relative;
   }
-  div.jqcloud a {
+div.jqcloud a {
 	color: inherit;
 	font-size: inherit;
 	text-decoration: none;
-  }
-  div.jqcloud a:hover {
+}
+div.jqcloud a:hover {
 	color: #0df;
-  }
-  div.jqcloud a:hover {
+}
+div.jqcloud a:hover {
 	color: #0cf;
-  }
-  div.jqcloud span {
+}
+div.jqcloud span {
 	padding: 0;
-  }
-  div.jqcloud span.w10 {
+}
+div.jqcloud span.w10 {
 	/* font-size: 54px; */
 	font-size: 60px;
 	color: #0cf;
-  }
-  div.jqcloud span.w9 {
+}
+div.jqcloud span.w9 {
 	/* font-size: 50px; */
 	font-size: 56px;
 	color: #0cf;
-  }
-  div.jqcloud span.w8 {
+}
+div.jqcloud span.w8 {
 	/* font-size: 44px; */
 	font-size: 50px;
 	color: #0cf;
-  }
-  div.jqcloud span.w7 {
+}
+div.jqcloud span.w7 {
 	/* font-size: 40px; */
 	font-size: 46px;
 	color: #39d;
-  }
-  div.jqcloud span.w6 {
+}
+div.jqcloud span.w6 {
 	/* font-size: 34px; */
 	font-size: 40px;
 	color: #90c5f0;
-  }
-  div.jqcloud span.w5 {
+}
+div.jqcloud span.w5 {
 	/* font-size: 30px; */
 	font-size: 36px;
 	color: #90a0dd;
-  }
-  div.jqcloud span.w4 {
+}
+div.jqcloud span.w4 {
 	/* font-size: 24px; */
 	font-size: 30px;
 	color: #90c5f0;
-  }
-  div.jqcloud span.w3 {
+}
+div.jqcloud span.w3 {
 	/* font-size: 20px; */
 	font-size: 26px;
 	color: #a0ddff;
-  }
-  div.jqcloud span.w2 {
+}
+div.jqcloud span.w2 {
 	/* font-size: 14px; */
 	font-size: 20px;
 	color: #99ccee;
-  }
-  div.jqcloud span.w1 {
+}
+div.jqcloud span.w1 {
 	/* font-size: 10px; */
 	font-size: 16px;
 	color: #aab5f0;
-  }
+}
 
 /* 포트폴리오 */
 #portfolio .inner {
@@ -290,7 +318,9 @@ div.jqcloud {
 	height: 100%;
 	font-size: 16px;
 	line-height: 20x;
-	background-color: #000;
+	background-color: #ccc;
+	border: 1px solid #ccc;
+	border-bottom: none;
 	overflow: hidden;
 }
 #portfolio .inner ul li a img {
@@ -304,7 +334,7 @@ div.jqcloud {
 	color: #fff;
 	background-color: rgba(0,0,0,0.8);
 	font-size: 16px;
-	line-height: 30px;
+	line-height: 25px;
 	opacity: 0;
 	transition: all 0.5s;
 }
