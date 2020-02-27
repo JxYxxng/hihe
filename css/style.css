@@ -157,12 +157,77 @@ section:nth-child(2n+1) .inner h3 {
 	padding: 70px 0;
 	text-align: center;
 }
-#about .inner .box1 text {
-	color: red;
-}
-#about .inner .box2 text {
-	color: blue;
-}
+
+div.jqcloud {
+	font-family: "Helvetica", "Arial", sans-serif;
+	color: #09f;
+	overflow: hidden;
+	position: relative;
+  }
+  div.jqcloud a {
+	color: inherit;
+	font-size: inherit;
+	text-decoration: none;
+  }
+  div.jqcloud a:hover {
+	color: #0df;
+  }
+  div.jqcloud a:hover {
+	color: #0cf;
+  }
+  div.jqcloud span {
+	padding: 0;
+  }
+  div.jqcloud span.w10 {
+	/* font-size: 54px; */
+	font-size: 60px;
+	color: #0cf;
+  }
+  div.jqcloud span.w9 {
+	/* font-size: 50px; */
+	font-size: 56px;
+	color: #0cf;
+  }
+  div.jqcloud span.w8 {
+	/* font-size: 44px; */
+	font-size: 50px;
+	color: #0cf;
+  }
+  div.jqcloud span.w7 {
+	/* font-size: 40px; */
+	font-size: 46px;
+	color: #39d;
+  }
+  div.jqcloud span.w6 {
+	/* font-size: 34px; */
+	font-size: 40px;
+	color: #90c5f0;
+  }
+  div.jqcloud span.w5 {
+	/* font-size: 30px; */
+	font-size: 36px;
+	color: #90a0dd;
+  }
+  div.jqcloud span.w4 {
+	/* font-size: 24px; */
+	font-size: 30px;
+	color: #90c5f0;
+  }
+  div.jqcloud span.w3 {
+	/* font-size: 20px; */
+	font-size: 26px;
+	color: #a0ddff;
+  }
+  div.jqcloud span.w2 {
+	/* font-size: 14px; */
+	font-size: 20px;
+	color: #99ccee;
+  }
+  div.jqcloud span.w1 {
+	/* font-size: 10px; */
+	font-size: 16px;
+	color: #aab5f0;
+  }
 
 /* 포트폴리오 */
 #portfolio .inner {
@@ -238,6 +303,8 @@ section:nth-child(2n+1) .inner h3 {
 	padding: 40px;
 	color: #fff;
 	background-color: rgba(0,0,0,0.8);
+	font-size: 16px;
+	line-height: 30px;
 	opacity: 0;
 	transition: all 0.5s;
 }
