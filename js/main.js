@@ -63,7 +63,7 @@ $(function(){
 		}
 		pos=n*h;
 
-		$("html").stop().animate({scrollTop:pos}, 1000, function(){
+		$("html").stop().animate({scrollTop:pos}, 800, function(){
 			$(".container > section").removeClass("active");
 			$(".container > section").eq(n).addClass("active");
 			$("#gnb li").removeClass("on");
