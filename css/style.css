@@ -98,9 +98,8 @@ section:nth-child(2n+1) .inner h3 {
 }
 #main .keytext p {
 	padding: 30px 0 0 10px;
-	font-size: 30px;
+	font-size: 25px;
 	line-height: 40px;
-	font-weight: 600;
 	color: #fff;
 	overflow: hidden;
 }
@@ -264,29 +263,8 @@ div.jqcloud span.w1 {
 #portfolio .inner h3 {
 	position: absolute; left: 50px; top: 70px;
 }
-#portfolio .inner .portBtn {
-	position: absolute; right: 50px; top: 50%;
-	width: 50px;
-	height: 50px;
-	margin-top: -25px;
-}
-#portfolio .inner .portBtn a {
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: url(../images/right.png) no-repeat center;
-}
-#portfolio .inner.move .portBtn a {
-	background: url(../images/left.png) no-repeat center;
-}
-#portfolio .inner .portBtn a span {
-	display: block;
-	width: 0;
-	height: 0;
-	text-indent: -9999px;
-	overflow: hidden;
-}
 #portfolio .inner .portInner {
+	float: left;
 	position: relative;
 	width: 960px;
 	height: 100%;
@@ -368,6 +346,29 @@ div.jqcloud span.w1 {
 	font-size: 16px;
 	line-height: 20x;
 	writing-mode: tb-rl;
+}
+#portfolio .inner .portBtn {
+	float: left;
+	/* position: absolute; right: 50px; top: 50%; */
+	width: 50px;
+	height: 50px;
+	/* margin-top: -25px; */
+}
+#portfolio .inner .portBtn a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url(../images/right.png) no-repeat center;
+}
+#portfolio .inner.move .portBtn a {
+	background: url(../images/left.png) no-repeat center;
+}
+#portfolio .inner .portBtn a span {
+	display: block;
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+	overflow: hidden;
 }
 
 /* 컨택트 */
