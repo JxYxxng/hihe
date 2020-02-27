@@ -9,420 +9,199 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-1.11.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="js/main.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
-	<header id="home">
-		<h1><a href="https://jxyxxng.github.io/project">JxYxxng</a></h1>
+	<header id="header">
+		<h1><a href=""></a></h1>
 		<nav id="gnb">
 			<ul>
-				<li><a href=""><span>HOME</span></a></li>
-				<li><a href=""><span>PROFILE</span></a></li>
-				<li><a href=""><span>PORTFOLIO</span></a></li>
+				<li><a href=""><b>01</b><span>　MAIN</span></a></li>
+				<li><a href=""><b>02</b><span>　TOOL</span></a></li>
+				<li><a href=""><b>03</b><span>　ABOUT</span></a></li>
+				<li><a href=""><b>04</b><span>　PORTFOLIO</span></a></li>
+				<li><a href=""><b>05</b><span>　CONTACT</span></a></li>
 			</ul>
 		</nav>
-		<nav id="gnb_fixed">
-			<ul>
-				<li><a href=""><span>HOME</span></a></li>
-				<li><a href=""><span>PROFILE</span></a></li>
-				<li><a href=""><span>PORTFOLIO1</span></a></li>
-				<li><a href=""><span>PORTFOLIO2</span></a></li>
-				<li><a href=""><span>PORTFOLIO3</span></a></li>
-				<li><a href=""><span>PORTFOLIO4</span></a></li>
-			</ul>
-		</nav>
-		<nav id="gnb_mobile">
-			<ul>
-				<li><a href=""><span>HOME</span></a></li>
-				<li><a href=""><span>PROFILE</span></a></li>
-				<li><a href=""><span>PORTFOLIO1</span></a></li>
-				<li><a href=""><span>PORTFOLIO2</span></a></li>
-				<li><a href=""><span>PORTFOLIO3</span></a></li>
-				<li><a href=""><span>PORTFOLIO4</span></a></li>
-			</ul>
-		</nav>
-		<div class="tab"><a href=""><span>tab</span></a></div>
-		<div class="bg"></div>
 	</header>
-	<div class="keyvisual">
-		<div class="img"><img src="images/key.png" title="키비주얼" alt="키비주얼"></div>
-		<div class="keytext">
-			<h2>An Ji Young</h2><br>
-			Web Publisher<br>
-		</div>
+	<div class="container">
+		<section id="main">
+			<div class="inner">
+				<div class="keytext">
+					<h2><span>WEB PUBLISHER</span></h2>
+					<p>
+						<span>자기소개란 안녕하세요 안녕하세요</span>
+						<span>자기소개란 안녕하세요 안녕하세요</span>
+					</p>
+				</div>
+				<div class="scroll"></div>
+			</div>
+		</section>
+		<!-- e: main -->
+
+		<section id="tool">
+			<div class="inner">
+				<h3>TOOL</h3>
+				<ul>
+					<li>
+						<p><img src="images/tool1.png" alt="Eclipse"></p>
+						<p>Eclipse</p>
+					</li>
+					<li>
+						<p><img src="images/tool2.png" alt="VScode"></p>
+						<p>VScode</p>
+					</li>
+					<li>
+						<p><img src="images/tool3.png" alt="GitHub"></p>
+						<p>GitHub</p>
+					</li>
+					<li>
+						<p><img src="images/tool4.png" alt="Redmine"></p>
+						<p>Redmine</p>
+					</li>
+					<li>
+						<p><img src="images/tool5.png" alt="Sass"></p>
+						<p>Sass</p>
+					</li>
+					<li>
+						<p class="img"><img src="images/tool6.png" alt="Zeplin"></p>
+						<p>Zeplin</p>
+					</li>
+					<li>
+						<p><img src="images/tool7.png" alt="Photoshop"></p>
+						<p>Photoshop</p>
+					</li>
+					<li>
+						<p><img src="images/tool8.png" alt="Illustrator"></p>
+						<p>Illustrator</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- e: tool -->
+
+		<section id="about">
+			<div class="inner">
+				<h3>ABOUT</h3>
+				<div class="box1">
+					<text>HTML5</text>
+					<text>CSS3</text>
+					<text>jQuery</text>
+					<text>VanillaJS</text>
+					<text>SASS</text>
+					<text>반응형</text>
+					<text>모바일</text>
+					<text>Parallax</text>
+					<text>외부 API</text>
+				</div>
+				<div class="box2">
+					<text>꼼꼼함</text>
+					<text>성실함</text>
+					<text>책임감</text>
+					<text>빠른속도</text>
+					<text>의사소통</text>
+					<text>자기개발</text>
+					<text>수학과</text>
+					<text>웹디자인기능사</text>
+					<text>워드프로세서1급</text>
+				</div>
+			</div>
+		</section>
+		<!-- e: 키워드 -->
+
+		<section id="portfolio">
+			<div class="inner">
+				<h3>PORTFOLIO</h3>
+				<div class="portBtn"><a href=""><span>포트폴리오버튼</span></a></div>
+				<div class="portInner">
+					<ul>
+						<li>
+							<a href="https://JxYxxng.github.io/project1" target="_blank">
+								<img src="images/portfolio1_1.png" alt="포트폴리오1">
+								<div class="info">
+									PC/MOBILE 사이트 작업
+									전체 코딩
+									GNB, 슬라이드, 게시판 탭 등 스크립트 작성<br>
+									<span></span>
+								</div>
+							</a>
+							<p>FERMAT (PC/Mobile)</p>
+						</li>
+						<li>
+							<a href="https://JxYxxng.github.io/project1_vanillaJS" target="_blank">
+								<img src="images/portfolio1_1.png" alt="포트폴리오1">
+								<div class="info">
+									FERMAT 사이트 VanillaJS 작업
+									전체 코딩
+									jQuery → VanillaJS 작성
+									<br>
+									<span></span>
+								</div>
+							</a>
+							<p>FERMAT (VanillaJS)</p>
+						</li>
+						<li>
+							<a href="https://JxYxxng.github.io/project2" target="_blank">
+								<img src="images/portfolio2_1.png" alt="포트폴리오2">
+								<div class="info">
+									반응형 사이트 작업
+									전체 코딩
+									GNB와 탭메뉴 스크립트 등 작성<br>
+									<span></span>
+								</div>
+							</a>
+							<p>DOES (반응형)</p>
+
+						</li>
+						<li>
+							<a href="https://JxYxxng.github.io/project3" target="_blank">
+								<img src="images/portfolio3_1.png" alt="포트폴리오3">
+								<div class="info">
+									PC/MOBILE 사이트 작업
+									전체 코딩
+									GNB, 키비주얼 슬라이드 스크립트<br>
+									<span></span>
+								</div>
+							</a>
+							<p>HIGH CHEEKS (PC/Mobile)</p>
+						</li>
+						<li>
+							<a href="https://JxYxxng.github.io/project0" target="_blank">
+								<img src="images/portfolio3_1.png" alt="포트폴리오3">
+								<div class="info">
+									PC 사이트 작업
+									전체 코딩
+									GNB, 슬라이드, 게시판 탭 등 스크립트 작성<br>
+									<span></span>
+								</div>
+							</a>
+							<p>MAXIM (PC)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- e: 포트폴리오 -->
+
+		<section id="contact">
+			<div class="inner">
+				<h3>CONTACT</h3>
+				<p>
+					<b>Phone</b>　01034209798<br>
+					<b>E-mail</b>　ajy9798@naver.com<br>
+					<b>Address</b>　서울특별시 노량진동
+				</p>
+				<div class="mapCont">
+					<div id="map"></div>
+				</div>
+			</div>
+		</section>
+		<!-- s: 컨텍트 -->
 	</div>
-	<section id="profile">
-		<h3>ABOUT</h3>
-		<div class="profile1 clearfix">
-			<dl class="s01 fll">
-				<dt>발전하는 웹 퍼블리셔</dt>
-				<dd>
-					웹 퍼블리셔에서 무엇보다 중요한 것은 소통과 속도라고 생각합니다. 팀원들과 함께 공동의 작업을 완성해가는 것이며, 클라이언트와의 소통도 중요합니다.<br>
-					제 강점인 <strong>배려심</strong>과 <strong>소통</strong>을 통해 팀원들과 함께 최선의 작업을 이끌어 낼 수 있도록 하겠습니다. 또한 꼼꼼함과 빠른 속도로 클라이언트가 원하는 웹페이지를 빠르게 만들어내도록 하겠습니다.<br>
-					주어진 업무를 <strong>신속하고 책임감 있게</strong> 해내어 귀사에 도움이 되는, 지속적으로 공부하고 연구하여 발전하는 웹 퍼블리셔가 되겠습니다.
-				</dd>
-			</dl>
-			<dl class="s02 flr">
-				<dt>SKILL TREE</dt>
-				<dd>
-					HTML5 문법 준수<br>
-					CSS3 Animation 구현<br>
-					JavaScript jQuery <br>
-					VanillaJS<br>
-					SASS<br>
-					반응형 웹 페이지<br>
-					모바일 웹 페이지(Flexbox Layout Module)<br>
-					Parallax 웹 페이지<br>
-					외부 API 구현(Google Map, Carousel)<br>
-					GitHub를 이용한 Git 시스템 협업 가능
-				</dd>
-			</dl>
-		</div>
-		<div class="profile2 clearfix">
-			<div class="s03 fll">
-				<p><img src="images/profile.jpg" title="프로필 바다 사진" alt="프로필"></p>
-				<p class="caption">안 지 영　1993.01.26<br></p>
-			</div>
-			<div class="s04 fll">
-				<dl>
-					<dt>CONTACT</dt>
-					<dd>
-						<span>PHONE</span>+82 10.3420.9798<br>
-						<span>E - MAIL</span>ajy9798@naver.com<br>
-					</dd>
-					<dt>EDUCATION</dt>
-					<dd>
-						<span>2012.02</span>복자여자고등학교 졸업<br>
-						<span>2017.02</span>충남대학교 수학과 졸업<br>
-						<span>2018.11</span>브레노스 교육 수료<a href="#" class="mark" title="수학동화 및 스크래치, 지오지브라" style="cursor:default"></a><br>
-						<span>2019.12</span>UX/UI 교육 수료<a href="#" class="mark" title="웹 운영 능력 습득" style="cursor:default"></a><br>
-					</dd>
-					<dt>LICENSE</dt>
-					<dd>
-						<span>2019.12</span>웹디자인기능사<br>
-						<span>2005.11</span>워드프로세서1급<br>
-					</dd>
-					<dt>TOOL</dt>
-					<dd>
-						Eclipse, VScode, Redmine, GitHub<br>
-						Zeplin, Photoshop, Illustrator<br>
-					</dd>
-				</dl>
-			</div>
-		</div>
-	</section>
-	<section id="portfolio">
-		<h3>PORTFOLIO</h3>
-		<div class="portfolio1">
-			<div class="content">
-				<div class="img"><img src="images/portfolio1_1.png" title="포트폴리오1 PC" alt="포트폴리오1"></div>
-				<dl>
-					<dt>01 페르마 웹사이트</dt>
-					<dd>
-						<p class="sub"><span>PROJECT FEATURE</span>PC / Mobile HTML | <span>DATE</span>2019.08</p>
-						<p>
-							PC 및 MOBILE 사이트 작업<br>
-							HTML, CSS 코딩을 하였습니다.<br>
-							GNB, 슬라이드, 게시판 탭 스크립트를 작성하였습니다.<br>
-							메뉴들을 메인페이지에 배치하여 사용자가 쉽게 접근할 수 있도록 만들었습니다.<br>
-							VanillaJS 작업한 페이지도 추가합니다.
-						</p>
-						<a href="https://JxYxxng.github.io/project1" target="_blank">바로가기</a>
-						<a href="https://JxYxxng.github.io/project1_vanillaJS" target="_blank">VanillaJS</a>
-						<a href="" class="port_tab">자세히보기</a>
-					</dd>
-				</dl>
-			</div>
-			<div class="inner">
-				<div class="video"><video src="images/port1.mp4" loop muted></video></div>
-				<p class="guide">
-					Adobe XD / Photoshop<br>
-					HTML<br>
-					CSS / CSS3 / Flex CSS<br>
-					JavaScript / jQuery Plugins<br>
-				</p>
-				<div class="img"><img src="images/mobile1.gif" title="포트폴리오1 모바일" alt="모바일1"></div>
-				<div class="guide clearfix">
-					<div class="color">
-						<div class="color1">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#c9bf19</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#9db615</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#74a727</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fc7941</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#234c8f</p>
-								</li>
-							</ul>
-						</div>
-						<div class="color2">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#000</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#828783</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#f5f4f0</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fff</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="font">
-						<p class="font_1">HEADING 1.2em</p><br>
-						<p class="font_2">HEADING 0.875em</p><br>
-						<p class="font_3">HEADING 0.8em</p><br>
-						<p class="font_4">HEADING 0.75em</p>
-					</div>
-				</div>
-				<div class="inner_tab"><a href=""></a></div>
-			</div>
-		</div>
-		<div class="portfolio2">
-			<div class="content port_right">
-				<div class="img"><img src="images/portfolio2_1.png" title="포트폴리오2 PC" alt="포트폴리오2"></div>
-				<dl>
-					<dt>02 DOES 웹사이트</dt>
-					<dd>
-						<p class="sub"><span>PROJECT FEATURE</span>반응형 | <span>DATE</span>2019.09</p>
-						<p>
-							원페이지로 반응형사이트를 구현<br>
-							HTML, CSS 및 Media Qeury를 사용하여 반응형 코딩 작업을 하였습니다.<br>
-							GNB와 탭메뉴 스크립트 작업을 하였습니다.<br>
-							고정 메뉴와 TOP 버튼을 만들어 사용자가 페이지를 쉽고 이동할 수 있도록 구현하였습니다.<br>
-						</p>
-						<a href="https://JxYxxng.github.io/project2" target="_blank">바로가기</a>
-						<a href="" class="port_tab">자세히보기</a>
-					</dd>
-				</dl>
-			</div>
-			<div class="inner">
-				<div class="video"><video src="images/port2.mp4" loop muted></video></div>
-				<p class="guide">
-					Photoshop<br>
-					HTML<br>
-					CSS / CSS3<br>
-					JavaScript / jQuery Plugins<br>
-				</p>
-				<div class="img"><img src="images/mobile2.gif" title="포트폴리오2 모바일" alt="모바일2"></div>
-				<div class="guide clearfix">
-					<div class="color">
-						<div class="color1">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#22cace</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fed136</p>
-								</li>
-							</ul>
-						</div>
-						<div class="color2">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#000</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#353336</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#f9f9f9</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fff</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="font">
-						<p class="font_1">HEADING 1.875em</p><br>
-						<p class="font_2">HEADING 1em</p><br>
-						<p class="font_3">HEADING 0.75em</p>
-					</div>
-				</div>
-				<div class="inner_tab"><a href=""></a></div>
-			</div>
-		</div>
-		<div class="portfolio3">
-			<div class="content">
-				<div class="img"><img src="images/portfolio3_1.png" title="포트폴리오3 PC" alt="포트폴리오3"></div>
-				<dl>
-					<dt>03 하이칙스 웹사이트</dt>
-					<dd>
-						<p class="sub"><span>PROJECT FEATURE</span>PC / Mobile HTML | <span>DATE</span>2019.10</p>
-						<p>
-							PC 및 MOBILE 사이트 작업하였습니다.<br>
-							HTML, CSS 코딩 작업을 하였습니다.<br>
-							GNB, 키비주얼 슬라이드 스크립트를 작성하였습니다.<br>
-							사용자가 제품정보에 쉽게 접근할 수 있도록 메인페이지 제작하였습니다.<br>
-						</p>
-						<a href="https://JxYxxng.github.io/project3" target="_blank">바로가기</a>
-						<a href="" class="port_tab">자세히보기</a>
-					</dd>
-				</dl>
-			</div>
-			<div class="inner">
-				<div class="video"><video src="images/port3.mp4" loop muted></video></div>
-				<p class="guide">
-					Adobe XD / Photoshop<br>
-					HTML<br>
-					CSS / CSS3 / Flex CSS<br>
-					JavaScript / jQuery Plugins<br>
-				</p>
-				<div class="img"><img src="images/mobile3.gif" title="포트폴리오3 모바일" alt="모바일3"></div>
-				<div class="guide clearfix">
-					<div class="color">
-						<div class="color1">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#000</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#b5252e</p>
-								</li>
-							</ul>
-						</div>
-						<div class="color2">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#444</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#707475</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#9f9f9d</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fff</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="font">
-						<p class="font_1">HEADING 1.5em</p><br>
-						<p class="font_2">HEADING 0.9em</p><br>
-						<p class="font_3">HEADING 0.8em</p>
-					</div>
-				</div>
-				<div class="inner_tab"><a href=""></a></div>
-			</div>
-		</div>
-		<div class="portfolio4">
-			<div class="content port_right">
-				<div class="img"><img src="images/portfolio4_1.png" title="포트폴리오4 PC" alt="포트폴리오4"></div>
-				<dl>
-					<dt>04 맥심 웹사이트</dt>
-						<dd>
-						<p class="sub"><span>PROJECT FEATURE</span>PC HTML | <span>DATE</span>2019.07</p>
-						<p>
-							맥심브랜드 PC 사이트 작업하였습니다.<br>
-							HTML, CSS 코딩 작업을 하였습니다.<br>
-							GNB 스크립트를 작성하였습니다.<br>
-							사용자가 메뉴얼에 쉽게 접근할 수 있도록 메인페이지 제작하였습니다.
-						</p>
-						<a href="https://JxYxxng.github.io/project4" target="_blank">바로가기</a>
-						<a href="" class="port_tab">자세히보기</a>
-					</dd>
-				</dl>
-			</div>
-			<div class="inner">
-				<div class="video"><video src="images/port4.mp4" loop muted></video></div>
-				<p class="guide">
-					Photoshop<br>
-					HTML<br>
-					CSS / CSS3<br>
-					JavaScript / jQuery Plugins<br>
-				</p>
-				<div class="img"><img src="images/portfolio4_2.png" title="포트폴리오4 PC" alt="포트폴리오4"></div>
-				<div class="guide clearfix">
-					<div class="color">
-						<div class="color1">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#e60013</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#674a3e</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#b89d83</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#efebe1</p>
-								</li>
-							</ul>
-						</div>
-						<div class="color2">
-							<ul>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#000</p>
-								</li>
-								<li>
-									<div class="color_inner"></div>
-									<p class="color_text">#fff</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="font">
-						<p class="font_1">HEADING 1.875em</p><br>
-						<p class="font_2">HEADING 1.5em</p><br>
-						<p class="font_3">HEADING 1em</p><br>
-						<p class="font_4">HEADING 0.875em</p>
-					</div>
-				</div>
-				<div class="inner_tab"><a href=""></a></div>
-			</div>
-		</div>
-	</section>
-	<footer id=footer>
-		<p class="text">
-		Copyright@2019. Web Publisher 안지영. All rights reserved.<br>
-		본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.
-		<p>
-	</footer>
-	<div class="dim"></div>
 </div>
 </body>
 </html>

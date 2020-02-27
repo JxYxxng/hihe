@@ -7,804 +7,292 @@
 .clearfix::after {
 	clear: both;
 }
-body.static {
-	position: static; left:0; right: 0; top: 0; bottom: 0;
-	overflow: hidden;
+body {
+	overflow-y: hidden;
 }
-.fll {
-	float: left;
+section {
+	width: 100%;
+	background-color: #fff;
 }
-.flr {
-	float: right;
-}
-h3 {
-	border-top: 1px solid #ccc;
-	color: #d9d4cf;
-	font-weight: 700;
-	font-size: 6.875em;
-	text-align: center;
-}
-@media only screen and (max-width: 850px){
-	h3 {
-		font-size: 5em;
-	}
-}
-@media only screen and (max-width: 720px){
-	h3 {
-		font-size: 3em;
-	}
-}
-@media only screen and (max-width: 460px){
+section:nth-child(2n+1) {
+	background-color: #000;
 }
 
-/* STYLE CSS */
-/* home */
-#home {
-	max-width: 1200px;
-	margin: 0 auto;
-	position: relative;
+.inner {
+	width: calc(100% - 200px);
+	height: 100%;
+	float: right;
 }
-#home h1 a {
-	position: absolute; left: 0; top: 0;
-	z-index: 100;
-	display: block;
-	width: 180px;
-	padding: 10px 25px;
-	color: #abd0ce;
+section .inner h3 {
+	font-size: 60px;
+	line-height: 60px;
+	color: #000;
 }
-/* PC gnb */
-#gnb {
-	position: absolute; right: 0; top: 0;
-	z-index: 9999;
-	height: 70px;
-}
-#gnb li {
-	display: inline-block;
-}
-#gnb li a {
-	display: block;
-	padding: 25px;
-	font-weight: 700;
-	transition: color 0.3s;
-}
-#gnb li a:hover {
-	text-decoration: underline;
-}
-/* gnb_fixed */
-#gnb_fixed {
-	position: fixed; right: -200px; bottom: 100px;
-	z-index: 9999;
-	transition: right 0.8s;
-}
-#gnb_fixed.active {
-	right: 30px;
-}
-#gnb_fixed li a {
-	position: relative;
-	display: block;
-	width: 26px;
-	height: 26px;
-	margin-bottom: 20px;
-	border: 1.5px solid #abd0ce;
-	border-radius: 13px;
-	background-color: #fff;
-	transition: border 0.3s, background-color 0.3s;
-}
-#gnb_fixed li:last-child a {
-	margin-bottom: 0;
-}
-#gnb_fixed li a:hover {
-	border: 1.5px solid #f0e5de;
-	background-color: #f0e5de;
-}
-#gnb_fixed li.active a {
-	border: 1.5px solid #abd0ce;
-	background-color: #abd0ce;
-}
-#gnb_fixed li a span {
-	display: none;
-	position: absolute; right: 25px; top: -8px;
-	padding: 7px 10px;
-	font-size: 1em;
-	font-weight: 600;
-	text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-}
-#gnb_fixed ul li a:hover span {
-	color: #f0e5de;
-}
-#gnb_fixed ul li.active a span {
-	color: #abd0ce;
-}
-/* gnb_mobile */
-#gnb_mobile {
-	display: none;
-	position: fixed; left: 0; right: 0; top: 50%;
-	width: 70%;
-	height: 504px;
-	margin: 0 auto;
-	margin-top: -252px;
-	z-index: 9999;
-}
-#gnb_mobile li a {
-	display: block;
-	width: 100%;
-	margin: 0 auto;
-	padding: 30px 0 10px 0;
-	text-align: center;
-	font-weight: 600;
-	font-size: 2em;
+section:nth-child(2n+1) .inner h3 {
 	color: #fff;
-	border-bottom: 1px solid #fff;
 }
-#gnb_mobile li.active a {
-	color: #abd0ce;
-}
-#home .bg {
-	display: none;
+
+/* 헤더 */
+#header {
 	position: fixed; left: 0; top: 0;
-	width: 100%;
-	height: 64px;
-	z-index: 99;
-	background-color: rgba(0,0,0,0.2);
-}
-#home .tab {
-	display: none;
-	position: fixed; right: 20px; top: 20px;
 	z-index: 9999;
+	width: 200px;
+	height: 100vh;
+	border-right: 1px solid #ccc;
 }
-#home .tab a {
+#header h1 {
+	width: 160px;
+	height: 34px;
+	margin: 0 auto;
+	margin-top: 40px;
+	background: url(../images/logoW.png) no-repeat center;
+	background-size: 100%;
+	transition: background 1s;
+}
+#header.Black h1 {
+	background: url(../images/logoB.png) no-repeat center;
+	background-size: 100%;
+}
+#header h1 a {
 	display: block;
-	width: 24px;
-	height: 24px;
-	background: url(../images/tab.png) no-repeat left center;
+	width: 100%;
+	height: 100%;
 }
-#home .tab.active a {
-	background: url(../images/tab.png) no-repeat right center;
+#gnb {
+	margin: 0 auto;
+	margin-top: 100px;
 }
-#home .tab span {
+#gnb ul li a {
+	display: block;
+	padding: 20px;
+	color: #fff;
+	transition: color 1s;
+}
+#header.Black #gnb ul li a {
+	color: #000;
+}
+#gnb ul li a span {
+	opacity: 0.4;
+	transition: opacity 0.3s;
+}
+#gnb ul li.on a span,
+#gnb ul li a:hover span,
+#gnb ul li a:focus span {
+	opacity: 1;
+}
+
+/* 메인 */
+#main .inner {
+	position: relative;
+}
+#main .keytext {
+	position: absolute; left: 50px; top: 30%;
+}
+#main .keytext h2 {
+	width: 577px;
+	font-size: 72px;
+	line-height: 72px;
+	color: #fff;
+	font-style: italic;
+	overflow: hidden;
+}
+#main .keytext p {
+	padding: 30px 0 0 10px;
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: 600;
+	color: #fff;
+	overflow: hidden;
+}
+#main .keytext span {
+	display: block;
+	opacity: 0;
+	transform: translateY(90px);
+	transition: all 0.8s 0.3s;
+}
+#main .keytext p span:nth-child(1) {
+	transition-delay: 0.8s;
+}
+#main .keytext p span:nth-child(2) {
+	transition-delay: 1s;
+}
+#main.active .keytext h2 span,
+#main.active .keytext p span {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* 툴 */
+#tool .inner h3 {
+	padding: 70px 0;
+	text-align: center;
+}
+#tool .inner ul {
+	width: 810px;
+	margin: 0 auto;
+}
+#tool .inner ul li {
+	float: left;
+	width: 180px;
+	height: 200px;
+	margin-left: 30px;
+	margin-top: 30px;
+	padding-top: 25px;
+	border: 1px solid #ccc;
+}
+#tool .inner ul li:nth-child(4n+1) {
+	margin-left: 0;
+}
+#tool .inner ul li p {
+	font-size: 30px;
+	line-height: 65px;
+	text-align: center;
+}
+#tool .inner ul li p img {
+	width: 100px;
+}
+
+/* 어바웃 */
+#about .inner h3 {
+	padding: 70px 0;
+	text-align: center;
+}
+#about .inner .box1 text {
+	color: red;
+}
+#about .inner .box2 text {
+	color: blue;
+}
+
+/* 포트폴리오 */
+#portfolio .inner {
+	position: relative;
+}
+#portfolio .inner h3 {
+	position: absolute; left: 50px; top: 70px;
+}
+#portfolio .inner .portBtn {
+	position: absolute; right: 50px; top: 50%;
+	width: 50px;
+	height: 50px;
+	margin-top: -25px;
+}
+#portfolio .inner .portBtn a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url(../images/right.png) no-repeat center;
+}
+#portfolio .inner.move .portBtn a {
+	background: url(../images/left.png) no-repeat center;
+}
+#portfolio .inner .portBtn a span {
 	display: block;
 	width: 0;
 	height: 0;
 	text-indent: -9999px;
 	overflow: hidden;
 }
-@media only screen and (max-width: 850px){
-}
-@media only screen and (max-width: 720px){
-	#home h1 a {
-		color: #fff;
-	}
-	#gnb {
-		display: none;
-	}
-	#home .tab {
-		display: block;
-	}
-	#home .bg {
-		display: block;
-	}
-}
-@media only screen and (max-width: 460px){
-}
-/* 키비주얼 */
-.keyvisual {
+#portfolio .inner .portInner {
 	position: relative;
-	max-width: 1200px;
-	height: calc(100vh - 63px);
-	margin: 0 auto;
+	width: 960px;
+	height: 100%;
 	overflow: hidden;
 }
-.keyvisual .img {
+#portfolio .inner ul {
 	position: absolute; left: 0; bottom: 0;
-	opacity: 0.4;
+	width: 1900px;
 }
-.keyvisual img {
-	height: 85vh;
-	vertical-align: bottom;
-}
-.keyvisual .keytext {
-	position: absolute; right: 20px; bottom: 300px;
-	font-size: 1.5em;
-	text-align: center;
-}
-.keyvisual .keytext h2 {
-	font-size: 4em;
-	font-family: 'Liu Jian Mao Cao', cursive;
-}
-@media only screen and (max-width: 1080px){
-	.keyvisual .img {
-		left: -150px;
-	}
-}
-@media only screen and (max-width: 850px){}
-@media only screen and (max-width: 720px){
-	.keyvisual .img {
-		left: -50px;
-	}
-	.keyvisual .keytext {
-		right: auto; top: auto; bottom: 100px;
-		width: 100%;
-		font-size: 0.875em;
-		text-align: center;
-	}
-}
-@media only screen and (max-width: 460px){}
-
-/* 프로필 */
-#profile dt {
-	padding-bottom: 10px;
-	font-size: 1.3em;
-	font-weight: 600;
-	line-height: 30px;
-	color: #000;
-}
-#profile dd {
-	line-height: 30px;
-}
-#profile .profile1 {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 0;
-	padding-top: 50px;
-	border-bottom: 1px dashed #ccc;
-	overflow: hidden;
-}
-#profile .profile1 dl {
-	width: 48%;
-	height: 450px;
-	padding: 40px 60px;
-	line-height: 30px;
-	border: 3px solid #d9d4cf;
-}
-#profile .profile1 dl.s01 {
-	background-color: #d9d4cf;
-	transform: translateX(-500px);
-	opacity: 0;
-	transition: transform 0.8s, opacity 0.8s;
-	transition-delay: 0.5s;
-}
-#profile .profile1 dl.s02 {
-	background-color: #fff;
-	transform: translateX(500px);
-	opacity: 0;
-	transition: transform 0.8s, opacity 0.8s;
-	transition-delay: 0.5s;
-}
-#profile .profile1.show dl {
-	transform: translateX(0);
-	opacity: 1;
-}
-@media only screen and (max-width: 1080px){
-	#profile .profile1 dl {
-		padding: 40px 40px;
-	}
-}
-@media only screen and (max-width: 850px){
-	#profile .profile1 dl {
-		float: none;
-		width: calc(100% - 20px);
-		height: auto;
-		padding: 40px 60px;
-		margin: 10px;
-	}
-}
-@media only screen and (max-width: 720px){
-	#profile .profile1 {
-		font-size: 0.875em;
-	}
-}
-@media only screen and (max-width: 460px){
-	#profile .profile1 dl {
-		padding: 40px;
-	}
-}
-
-/* 3장 프로필 */
-#profile .profile2 {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 0;
-	overflow: hidden;
-}
-#profile .profile2 .s03 {
-	width: 500px;
-	margin-left: 100px;
-	transform: translateX(-500px);
-	opacity: 0;
-	transition: transform 0.8s, opacity 0.8s;
-	transition-delay: 0.5s;
-}
-#profile .profile2 .s03 img {
-	width: 100%;
-	overflow: hidden;
-}
-#profile .profile2 .s03 p.caption {
-	padding-right: 10px;
-	text-align: right;
-}
-#profile .profile2 .s04 {
-	margin-left: 80px;
-	transform: translateX(500px);
-	opacity: 0;
-	transition: transform 0.8s, opacity 0.8s;
-	transition-delay: 0.5s;
-}
-#profile .profile2.show .s03,
-#profile .profile2.show .s04 {
-	transform: translateX(0);
-	opacity: 1;
-}
-#profile .profile2 .s04 dd {
-	margin-bottom: 30px;
-}
-#profile .profile2 .s04 dd a {
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-}
-#profile .profile2 .s04 dd a {
-	background: url(../images/mark.png) no-repeat center center;
-}
-#profile .profile2 p span {
-	padding-right: 20px;
-	color: #b6b6b6;
-}
-@media only screen and (max-width: 1080px){
-	#profile .profile2 .s03 {
-		width: 450px;
-		margin-left: 50px;
-	}
-	#profile .profile2 .s04 {
-		margin-left: 40px;
-	}
-	#profile .profile2 .s04 {
-		line-height: 30px;
-	}
-	#profile .profile2 .s04 span {
-		padding-right: 20px;
-		color: #b6b6b6;
-	}
-}
-@media only screen and (max-width: 850px){
-	#profile .profile2 .s03 {
-		float: none;
-		width: 440px;
-		margin: 0 auto;
-	}
-	#profile .profile2 .s04 {
-		float: none;
-		width: 440px;
-		margin: 0 auto;
-		margin-top: 50px;
-		text-align: center;
-	}
-}
-@media only screen and (max-width: 720px){
-	#profile .profile2 .s04 dd a.mark {
-		display: none;
-	}
-}
-@media only screen and (max-width: 460px){
-	#profile .profile2 .s03 {
-		width: calc(100% - 20px);
-		margin: 0 10px;
-	}
-	#profile .profile2 .s04 {
-		width: 100%;
-	}
-}
-
-/* 포트폴리오 */
-#portfolio .portfolio4 {
-	border-bottom: 1px solid #ccc;
-}
-div[class^=portfolio] .content {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 0;
-	border-bottom: 1px dashed #ccc;
-	overflow: hidden;
-}
-#portfolio .content dl {
-	float: left;
-	width: 460px;
-	margin-left: 50px;
-	padding-top: 10px;
-	opacity: 0;
-	transition: opacity 0.8s;
-}
-#portfolio .content.port_right dl {
-	float: right;
-	margin-left: 0;
-	margin-right: 50px;
-}
-#portfolio.show .content dl {
-	opacity: 1;
-}
-#portfolio .content dt {
-	font-size: 2em;
-	font-weight: 600;
-	color: #000;
-}
-dd span {
-	padding-right: 10px;
-	color: #b6b6b6;
-}
-#portfolio .content dl dd {
-	line-height: 30px;
-}
-#portfolio .content dl dd p.sub {
-	padding: 15px 0;
-}
-
-#portfolio .content dl dd  a {
-	display: inline-block;
-	width: 100px;
-	height: 30px;
-	margin-top: 20px;
-	margin-right: 10px;
-	line-height: 28px;
-	text-align: center;
-	font-size: 0.875em;
-	color: #fff;
-	border: 1px solid #abd0ce;
-	background-color: #abd0ce;
-	transition: all 0.3s;
-}
-#portfolio .content dl dd a:hover {
-	border: 1px solid #abd0ce;
-	background-color: #000;
-}
-/* active focus 줘서 원래 색상 주기 */
-#portfolio .content dl dd a.port_tab {
-	color: #abd0ce;
-	border: 1px solid #abd0ce;
-	background-color: #fff;
-	transition: all 0.3s;
-}
-#portfolio .content dl dd a.port_tab:hover {
-	color: #fff;
-	background-color: #abd0ce;
-}
-#portfolio .content .img {
-	float: right;
-	margin-right: 50px;
-	width: 460px;
-	opacity: 0;
-	transition: opacity 0.8s;
-}
-#portfolio .content.port_right .img {
-	float: left;
-	margin-left: 50px;
-	margin-right: 0;
-}
-#portfolio.show .content .img {
-	opacity: 1;
-}
-#portfolio .content img {
-	width: 100%;
-}
-
-/* 포트폴리오 자세히보기 */
-#portfolio .inner {
-	background-color: #d9d4cf;
-	display: none;
-}
-#portfolio .inner .video {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 50px;
-}
-#portfolio .inner .video video {
-	width: 100%;
-}
-#portfolio .inner .guide {
-	padding: 50px 0;
-	background-color: #fff;
-	text-align: center;
-}
-#portfolio .inner .img {
-	width: 500px;
-	margin: 0 auto;
-	padding: 50px 0;
-}
-#portfolio .inner .img img {
-	width: 100%;
-}
-#portfolio .inner .guide .color {
-	display: inline-block;
-	vertical-align: middle;
-	padding-right: 50px;
-	margin-right: 50px;
-	border-right: 1px solid #d9d4cf;
-}
-#portfolio .inner .guide .color .color1 {
-	margin-bottom: 30px;
-}
-#portfolio .inner .guide .color li {
+#portfolio .inner ul li {
 	display: inline-block;
 	margin-left: 20px;
-	font-size: 0.875em;
-	text-align: center;
+	vertical-align: bottom;
 }
-#portfolio .inner .guide .color .color_inner {
-	width: 50px;
-	height: 50px;
-	border-radius: 25px;
-	margin: 0 auto;
+#portfolio .inner ul li:nth-child(3n+1) {
+	height: 550px;
 }
-#portfolio .inner .guide .font {
-	display: inline-block;
-	vertical-align: middle;
+#portfolio .inner ul li:nth-child(3n+2) {
+	height: 450px;
 }
-#portfolio .inner .inner_tab a {
+#portfolio .inner ul li:nth-child(3n) {
+	height: 700px;
+}
+#portfolio .inner ul li a {
+	position: relative;
 	display: block;
+	float: left;
+	width: 270px;
+	height: 100%;
+	font-size: 16px;
+	line-height: 20x;
+	background-color: #000;
+	overflow: hidden;
+}
+#portfolio .inner ul li a img {
+	height: 100%;
+}
+#portfolio .inner ul li a .info {
+	position: absolute; left: 0; top: 0;
 	width: 100%;
-	height: 50px;
-	background: url(../images/arrow.png) no-repeat center center;
-	transition: background-color 0.3s;
-}
-#portfolio .inner .inner_tab a:hover,
-#portfolio .inner .inner_tab a:focus {
-	background-color: ;
-	background: #abd0ce url(../images/arrow2.png) no-repeat center center;
-}
-
-/* 포트폴리오1 */
-#portfolio .portfolio1 .inner .color .color1 li:nth-child(1) .color_inner {
-	background-color: #c9bf19;
-}
-#portfolio .portfolio1 .inner .color .color1 li:nth-child(2) .color_inner {
-	background-color: #9db615;
-}
-#portfolio .portfolio1 .inner .color .color1 li:nth-child(3) .color_inner {
-	background-color: #74a727;
-}
-#portfolio .portfolio1 .inner .color .color1 li:nth-child(4) .color_inner {
-	background-color: #fc7941;
-}
-#portfolio .portfolio1 .inner .color .color1 li:nth-child(5) .color_inner {
-	background-color: #234c8f;
-}
-#portfolio .portfolio1 .inner .color .color2 li:nth-child(1) .color_inner {
-	background-color: #000;
-}
-#portfolio .portfolio1 .inner .color .color2 li:nth-child(2) .color_inner {
-	background-color: #828783;
-}
-#portfolio .portfolio1 .inner .color .color2 li:nth-child(3) .color_inner {
-	background-color: #f5f4f0;
-}
-#portfolio .portfolio1 .inner .color .color2 li:nth-child(4) .color_inner {
-	background-color: #fff;
-	border: 1px solid #d9d4cf;
-}
-#portfolio .portfolio1 .inner .font .font_1 {
-	font-size: 1.2em;
-	font-weight: 600;
-}
-#portfolio .portfolio1 .inner .font .font_2 {
-	font-size: 0.875em;
-}
-#portfolio .portfolio1 .inner .font .font_3 {
-	font-size: 0.8em;
-}
-#portfolio .portfolio1 .inner .font .font_4 {
-	font-size: 0.75em;
-}
-/* 포트폴리오2 */
-#portfolio .portfolio2 .inner .color .color1 li:nth-child(1) .color_inner {
-	background-color: #22cace;
-}
-#portfolio .portfolio2 .inner .color .color1 li:nth-child(2) .color_inner {
-	background-color: #fed136;
-}
-#portfolio .portfolio2 .inner .color .color1 li:nth-child(3) .color_inner {
-	background-color: #74a727;
-}
-#portfolio .portfolio2 .inner .color .color1 li:nth-child(4) .color_inner {
-	background-color: #fc7941;
-}
-#portfolio .portfolio2 .inner .color .color1 li:nth-child(5) .color_inner {
-	background-color: #234c8f;
-}
-#portfolio .portfolio2 .inner .color .color2 li:nth-child(1) .color_inner {
-	background-color: #000;
-}
-#portfolio .portfolio2 .inner .color .color2 li:nth-child(2) .color_inner {
-	background-color: #353336;
-}
-#portfolio .portfolio2 .inner .color .color2 li:nth-child(3) .color_inner {
-	background-color: #f9f9f9;
-}
-#portfolio .portfolio2 .inner .color .color2 li:nth-child(4) .color_inner {
-	background-color: #fff;
-	border: 1px solid #d9d4cf;
-}
-#portfolio .portfolio2 .inner .font .font_1 {
-	font-size: 1.875em;
-	font-weight: 600;
-}
-#portfolio .portfolio2 .inner .font .font_2 {
-	font-size: 1em;
-}
-#portfolio .portfolio2 .inner .font .font_3 {
-	font-size: 0.75em;
-}
-/* 포트폴리오3 */
-#portfolio .portfolio3 .inner .color .color1 li:nth-child(1) .color_inner {
-	background-color: #000;
-}
-#portfolio .portfolio3 .inner .color .color1 li:nth-child(2) .color_inner {
-	background-color: #b5252e;
-}
-#portfolio .portfolio3 .inner .color .color2 li:nth-child(1) .color_inner {
-	background-color: #7c7877;
-}
-#portfolio .portfolio3 .inner .color .color2 li:nth-child(2) .color_inner {
-	background-color: #707475;
-}
-#portfolio .portfolio3 .inner .color .color2 li:nth-child(3) .color_inner {
-	background-color: #9f9f9d;
-}
-#portfolio .portfolio3 .inner .color .color2 li:nth-child(4) .color_inner {
-	background-color: #fff;
-	border: 1px solid #d9d4cf;
-}
-#portfolio .portfolio3 .inner .font .font_1 {
-	font-size: 1.5em;
-	font-weight: 600;
-}
-#portfolio .portfolio3 .inner .font .font_2 {
-	font-size: 0.9em;
-}
-#portfolio .portfolio3 .inner .font .font_3 {
-	font-size: 0.8em;
-}
-/* 포트폴리오4 */
-#portfolio .portfolio4 .content {
-	border-bottom: none;
-}
-#portfolio .portfolio4 .inner .color .color1 li:nth-child(1) .color_inner {
-	background-color: #e60013;
-}
-#portfolio .portfolio4 .inner .color .color1 li:nth-child(2) .color_inner {
-	background-color: #674a3e;
-}
-#portfolio .portfolio4 .inner .color .color1 li:nth-child(3) .color_inner {
-	background-color: #b89d83;
-}
-#portfolio .portfolio4 .inner .color .color1 li:nth-child(4) .color_inner {
-	background-color: #efebe1;
-}
-#portfolio .portfolio4 .inner .color .color2 li:nth-child(1) .color_inner {
-	background-color: #000;
-}
-#portfolio .portfolio4 .inner .color .color2 li:nth-child(2) .color_inner {
-	background-color: #fff;
-	border: 1px solid #d9d4cf;
-}
-#portfolio .portfolio4 .inner .font .font_1 {
-	font-size: 1.875em;
-	font-weight: 600;
-}
-#portfolio .portfolio4 .inner .font .font_2 {
-	font-size: 1.5em;
-}
-#portfolio .portfolio4 .inner .font .font_3 {
-	font-size: 1em;
-}
-#portfolio .portfolio4 .inner .font .font_4 {
-	font-size: 0.875em;
-}
-@media only screen and (max-width: 1080px){
-	#portfolio .content dl {
-		width: 48%;
-		margin-left: 10px;
-		padding-top: 10px;
-	}
-	#portfolio .content .img {
-		margin-right: 10px;
-		width: 48%;
-	}
-	#portfolio .content.port_right dl {
-		margin-right: 10px;
-		padding-top: 10px;
-	}
-	#portfolio .content.port_right .img {
-		margin-left: 10px;
-	}
-}
-@media only screen and (max-width: 850px){
-	div[class^=portfolio] {
-		text-align: center;
-	}
-	#portfolio .content dl,
-	#portfolio .content.port_right dl {
-		float: none;
-		width: 100%;
-		margin: 0 auto;
-	}
-	#portfolio .content .img,
-	#portfolio .content.port_right .img {
-		float: none;
-		width: 450px;
-		margin: 0 auto;
-	}
-	#portfolio .inner .video {
-		width: 100%;
-	}
-}
-@media only screen and (max-width: 720px){
-	#portfolio {
-		font-size: 0.875em;
-	}
-	#portfolio .content .img,
-	#portfolio .content.port_right .img {
-		width: 100%;
-	}
-	#portfolio .inner {
-		font-size: 0.875em;
-	}
-	#portfolio .inner .video {
-		padding: 50px 0;
-	}
-	#portfolio .inner .img {
-		width: 100%;
-		margin: 0;
-		padding: 50px 70px;
-	}
-	#portfolio .inner .guide .color {
-		display: block;
-		margin: 0 20px;
-		padding-right: 0;
-		padding-bottom: 50px;
-		border-right: none;
-		border-bottom: 1px solid #d9d4cf;
-	}
-	#portfolio .inner .guide .color li {
-		margin-left: 10px;
-	}
-	#portfolio .inner .guide .font {
-		display: block;
-		padding-top: 50px;
-		border-right: none;
-	}
-}
-@media only screen and (max-width: 460px){
-	#portfolio .inner .guide .color .color_inner {
-		width: 40px;
-		height: 40px;
-		border-radius: 20px;
-	}
-}
-
-/* 푸터 */
-#footer {
-	padding: 10px 0;
-	background-color: #7c7877;
-	margin-top: 100px;
-}
-#footer .text {
-	max-width: 1200px;
-	margin: 0 auto;
-	text-align: center;
+	height: 100%;
+	padding: 40px;
 	color: #fff;
-	font-size: 0.875em;
-}
-@media only screen and (max-width: 1080px){}
-@media only screen and (max-width: 850px){}
-@media only screen and (max-width: 720px){
-	#footer .text {
-		font-size: 0.7em;
-	}
-}
-@media only screen and (max-width: 460px){}
-
-/* 딤창 */
-.dim {
-	display: none;
-	position: fixed; right: 0; left: 0; top: 0; bottom: 0;
-	z-index: 999;
 	background-color: rgba(0,0,0,0.8);
+	opacity: 0;
+	transition: all 0.5s;
+}
+#portfolio .inner ul li a:hover .info,
+#portfolio .inner ul li a:focus .info {
+	opacity: 1;
+}
+#portfolio .inner ul li a .info span {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 1px;
+    background: #fff;
+	transition: all 0.8s ;
+}
+#portfolio .inner ul li a .info span::after {
+	position: absolute; right: 0; top: -7px;
+	content: "";
+	display: block;
+    width: 8px;
+    height: 7px;
+    background: url(../images/arrow.png) no-repeat 0 0;
+}
+#portfolio .inner ul li a:hover .info span,
+#portfolio .inner ul li a:focus .info span {
+	width: 100px;
+}
+#portfolio .inner ul li p {
+	float: left;
+	padding-top: 5px;
+	font-size: 16px;
+	line-height: 20x;
+	writing-mode: tb-rl;
+}
+
+/* 컨택트 */
+#contact .inner {
+	position: relative;
+}
+#contact h3 {
+	padding: 70px 50px;
+}
+#contact p {
+	position: absolute; left: 50px; bottom: 50px;
+	width: 50%;
+	font-size: 25px;
+	line-height: 40px;
+	color: #fff;
+}
+#contact .mapCont {
+	position: absolute; right: 0; top: 0;
+	width: 50%;
+	height: 100%;
+}
+#map {
+	width: 100%;
+	height: 100%;
 }
