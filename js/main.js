@@ -141,10 +141,10 @@ $(function(){
 		map.setZoomable(zoomable);    
 	}
 
-	function zoomIn() {
-		map.setLevel(map.getLevel() - 1);
-	}
-	function zoomOut() {
-		map.setLevel(map.getLevel() + 1);
-	}
+	// function zoomIn() {
+	// 	map.setLevel(map.getLevel() - 1);
+	// }
+	// function zoomOut() {
+	// 	map.setLevel(map.getLevel() + 1);
+	// }
 });
