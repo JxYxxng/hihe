@@ -128,7 +128,6 @@ $(function(){
 	var container = document.getElementById('map');
 	var options = {
 		center: new kakao.maps.LatLng(37.510257, 126.946595), // 중심좌표
-		draggable: false, // 스크롤
 		level: 3 // 지도 크기
 	};
 	var map = new kakao.maps.Map(container, options);
@@ -137,4 +136,9 @@ $(function(){
 		position: markerPosition
 	});
 	marker.setMap(map); // 마커 표시
+	function setZoomable(zoomable) { // 확대 축소 막기
+		map.setZoomable(zoomable);    
+	}
+	var zoomControl = new kakao.maps.ZoomControl(); // 줌 버튼
+	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 });
