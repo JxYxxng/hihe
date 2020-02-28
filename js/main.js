@@ -136,9 +136,11 @@ $(function(){
 		position: markerPosition
 	});
 	marker.setMap(map); // 마커 표시
+
+	var zoomControl = new kakao.maps.ZoomControl(); // 줌 버튼
+	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
 	function setZoomable(zoomable) { // 확대 축소 막기
 		map.setZoomable(zoomable);    
 	}
-	var zoomControl = new kakao.maps.ZoomControl(); // 줌 버튼
-	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 });
