@@ -16,6 +16,7 @@ $(function(){
 	});
 	$(window).trigger("resize");
 
+	// gnb 클릭
 	$("#gnb li").click(function(e){
 		// if($("html").is(":animated")) return;
 
@@ -36,39 +37,35 @@ $(function(){
 			$("#header").removeClass("Black")
 		}
 	});
+
+	// 마우스 스크롤
 	$(".container").mousewheel(function(e, delta){
 		// if($("html").is(":animated")) return;
 
 		if(delta > 0){
-			if(n > 0){
-				n=n-1;
-			}
-			else {
-				return;
-			}
+			if(n > 0){ n=n-1; }
+			else return;
 		}
 		else{
-			if(n < 4){
-				n=n+1;
-			}
-			else {
-				return;
-			}
+			if(n < 4){ n=n+1; }
+			else return;
 		}
+
 		if(n%2 == 1){
 			$("#header").addClass("Black")
 		}
 		else {
 			$("#header").removeClass("Black")
 		}
-		pos=n*h;
 
+		pos=n*h;
 		$("html").stop().animate({scrollTop:pos}, 800, function(){
 			$(".container > section").removeClass("active");
 			$(".container > section").eq(n).addClass("active");
 			$("#gnb li").removeClass("on");
 			$("#gnb li").eq(n).addClass("on");
 		});
+
 	});
 
 
@@ -131,6 +128,7 @@ $(function(){
 	var container = document.getElementById('map');
 	var options = {
 		center: new kakao.maps.LatLng(37.510257, 126.946595), // 중심좌표
+		draggable: false, // 스크롤
 		level: 3 // 지도 크기
 	};
 	var map = new kakao.maps.Map(container, options);
