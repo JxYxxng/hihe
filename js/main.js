@@ -136,15 +136,7 @@ $(function(){
 		position: markerPosition
 	});
 	marker.setMap(map); // 마커 표시
-
-	function setZoomable(zoomable) { // 확대 축소 막기
-		map.setZoomable(zoomable);    
-	}
-
-	// function zoomIn() {
-	// 	map.setLevel(map.getLevel() - 1);
-	// }
-	// function zoomOut() {
-	// 	map.setLevel(map.getLevel() + 1);
-	// }
+	map.setZoomable(false); // 스크롤 막기
+	var zoomControl = new kakao.maps.ZoomControl(); // 확대 축소 버튼
+	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 });
