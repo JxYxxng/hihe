@@ -86,9 +86,9 @@ section:nth-child(2n+1) .inner h3 {
 	transition: opacity 0.3s;
 }
 #gnb ul li.on a span,
-#gnb ul li a:hover span,
-#gnb ul li a:focus span {
+#gnb ul li a:hover span {
 	opacity: 1;
+	font-weight: 700;
 }
 
 /* 메인 */
@@ -332,23 +332,25 @@ div.jqcloud span.w1 {
 	width: 100%;
 }
 #portfolio .inner .portInner {
-	float: left;
 	position: relative;
-	width: 960px;
+	width: 1028px; /**/
 	height: 100%;
+	/* margin: 0 auto; */
+	margin-left: 50px;
 	overflow: hidden;
 }
 #portfolio .inner ul {
 	position: absolute; left: 0; bottom: 0;
-	width: 3000px;
+	width: 3084px; /**/
 }
 #portfolio .inner ul li {
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 70px;
 	vertical-align: bottom;
 }
 #portfolio .inner ul li:nth-child(3n+1) {
 	height: 550px;
+	margin-left: 0;
 }
 #portfolio .inner ul li:nth-child(3n+2) {
 	height: 450px;

@@ -18,8 +18,6 @@ $(function(){
 
 	// gnb 클릭
 	$("#gnb li").click(function(e){
-		// if($("html").is(":animated")) return;
-
 		e.preventDefault();
 		n1=$(this).index();
 		pos=n1*h;
@@ -40,8 +38,6 @@ $(function(){
 
 	// 마우스 스크롤
 	$(".container").mousewheel(function(e, delta){
-		// if($("html").is(":animated")) return;
-
 		if(delta > 0){
 			if(n1 > 0){ n1=n1-1; }
 			else return;
@@ -57,7 +53,6 @@ $(function(){
 		else {
 			$("#header").removeClass("Black")
 		}
-
 		pos=n1*h;
 		$("html").stop().animate({scrollTop:pos}, 800, function(){
 			$(".container > section").removeClass("active");
@@ -71,6 +66,7 @@ $(function(){
 	// 포트폴리오
 	var n2=0; // 갤러리 번호 변수
 	var total=3; // 갤러리 전체 개수 변수
+	var w=1028; // 갤러리 가로 길이
 	var amount=0; // 갤러리 움직일 위치 변수
 	var id=setInterval(leftMoving, 20000); // 갤러리 타이머 변수
 	$(".timer .gage").animate({width:"100%"}, 20000);
@@ -101,7 +97,7 @@ $(function(){
 		else{
 			n2=0;
 		}
-		amount=n2* -1 * 960 + "px";
+		amount=n2* -1 * w + "px";
 		$("#portfolio ul").animate({left:amount}, 800);
 		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
 		$(".pager .current").text("0"+(n2+1));
@@ -115,7 +111,7 @@ $(function(){
 		else{
 			n2=(total-1);
 		}
-		amount=n2* -1 * 960 + "px";
+		amount=n2* -1 * w + "px";
 		$("#portfolio ul").animate({left:amount}, 800);
 		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
 		$(".pager .current").text("0"+(n2+1));
