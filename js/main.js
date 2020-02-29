@@ -71,17 +71,63 @@ $(function(){
 
 
 	// 포트폴리오
-	$(".portBtn").click(function(e){
-		e.preventDefault();
-		if($(".inner").hasClass("move")){
-			$(".inner").removeClass("move");
-			$("#portfolio ul").animate({left:0}, 800);
-		}
-		else {
-			$(".inner").addClass("move");
-			$("#portfolio ul").animate({left:"-960px"}, 800);
-		}
+	var n=0; // 갤러리 번호 변수
+	var w=920; // 갤러리 가로 크기 변수
+	var total=2; // 갤러리 전체 개수 변수
+	var amount=0; // 갤러리 움직일 위치 변수
+	var id=setInterval(leftMoving, 20000); // 갤러리 타이머 변수
+	$(".timer .gage").animate({width:"100%"}, 20000);
+
+
+	setTimeout(function(){ // 갤러리 초기 설정 타이머
+		// $(".slider_wrap .slider").css({width:total*w});
+		// $(".slider_wrap, .slider_wrap .slider").css({height:$(".slider_wrap img").height()});
+		// $(".top .title").html(titleArray[n]).css({opacity:0}).animate({opacity:1}, 500);
+		$(".pager .current").text("01");
+		$(".pager .total").text("0"+total);
+	}, 150);
+
+	$(".controls .prev").click(leftMoving);
+	$(".controls .next").click(rightMoving);
+
+	$(".pause").click(function(){
+		clearInterval(id);
+		$(".timer .gage").stop().animate({width:0},800);
 	});
+	$(".play").click(function(){
+		$(".timer .gage").animate({width:"100%"}, 20000);
+		id=setInterval(rightMoving, 9000);
+	});
+
+	function leftMoving(){ // 왼쪽 이동 함수
+		if(n < (total-1)){
+			n++;
+		}else{
+			n=0;
+		}
+		console.log(n);
+		
+		amount=n* -1 * 960 + "px";
+		$("#portfolio ul").animate({left:amount}, 800);
+		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
+		$(".pager .current").text("0"+(n+1));
+	}
+	function rightMoving(){ // 오른쪽 이동 함수
+		if(n > 0){
+			n--;
+		}
+		else{
+			n=(total-1);
+		}
+		console.log(n);
+
+		amount=n* -1 * 960 + "px";
+		$("#portfolio ul").animate({left:amount}, 800);
+		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
+		$(".pager .current").text("0"+(n+1));
+	}
+
+	
 
 	// 단어
 	var word_list = [

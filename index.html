@@ -12,7 +12,7 @@
 <!-- 스크롤 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
 <!-- MAP -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e91143dd974ebe760b613e91f009130b"></script>
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e91143dd974ebe760b613e91f009130b"></script> -->
 <!-- 단어 -->
 <script type="text/javascript" src="js/jqcloud-0.2.10.js"></script>
 
@@ -91,16 +91,28 @@
 
 		<section id="portfolio">
 			<div class="inner">
-				<h3>PORTFOLIO</h3>
+				<div class="title">
+					<h3>PORTFOLIO</h3>
+					<div class="controls">
+						<div class="timer"><span class="gage"></span></div>
+						<div class="pager"><span class="current">01</span>-<span class="total">02</span></div>
+					</div>
+					<div class="btn">
+						<button class="prev" type="button" style="">PREV</button>
+						<a class="pause" style=""><img src="images/pause.png" alt="일시중지"></a>
+						<a class="play" style=""><img src="images/play.png" alt="일시중지"></a>
+						<button class="next" type="button">NEXT</button>
+					</div>
+				</div>
 				<div class="portInner">
 					<ul>
 						<li>
 							<a href="javascript:alert('보안상 반출불가로 기간과 작업 내용을 적어놓았습니다');" target="">
 								<div class="info">
 									2020.12 ~ 2020.02<br>
-									백화점 관리자 사이트 고도화 작업<br>
-									UI 가이드를 이용해 퍼블리싱 작업으로 입력페이지, 상세페이지, 팝업 작성<br>
-									input 타입, table 태그 이용<br>
+									○○백화점 관리자 사이트 고도화 작업<br>
+									UI 가이드를 이용한 퍼블리싱 작업으로 입력페이지, 상세페이지, 팝업 작성<br>
+									주로 input, table 태그 이용<br>
 									<br>
 									<span></span>
 								</div>
@@ -176,7 +188,6 @@
 						</li>
 					</ul>
 				</div>
-				<div class="portBtn"><a href=""><span>포트폴리오버튼</span></a></div>
 			</div>
 		</section>
 		<!-- e: 포트폴리오 -->
