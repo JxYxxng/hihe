@@ -279,27 +279,14 @@ div.jqcloud span.w1 {
 	height: 50px;
 }
 #portfolio .inner .title .controls {
-	/* position: absolute; */
-	/* right: 0; */
-	/* top: 110px; */
-	width: 230px;
+	width: 100%;
 	font-family: "Assistant", sans-serif;
 	font-weight: 700;
 	font-size: 10px;
 }
-#portfolio .inner .title .controls .btn {
-	/* float: left; */
-	overflow: hidden;
-}
-#portfolio .inner .title .controls .btn button {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: 700;
-	transition: color 0.2s;
-}
 #portfolio .inner .title .controls .timer {
 	position: relative;
-	margin-top: 16px;
+	margin-top: 5px;
 	height: 4px;
 	background-color: #eaeaea;
 }
@@ -310,12 +297,12 @@ div.jqcloud span.w1 {
 	top: 0;
 	width: 0;
 	height: 100%;
-	background-color: #8ac007;
+	background-color: #000;
 }
 #portfolio .inner .title .controls .pager {
 	float: right;
 	margin-right: 10px;
-	margin-top: 19px;
+	margin-top: 5px;
 	font-size: 11px;
 	letter-spacing: 2px;
 }
@@ -324,6 +311,25 @@ div.jqcloud span.w1 {
 }
 #portfolio .inner .title .controls .pager .total {
 	margin-left: 11px;
+}
+#portfolio .inner .title .btn {
+	overflow: hidden;
+}
+#portfolio .inner .title .btn button {
+	margin-right: 5px;
+	font-size: 11px;
+	font-weight: 700;
+	transition: color 0.2s;
+}
+#portfolio .inner .title .btn a {
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+#portfolio .inner .title .btn a img {
+	width: 100%;
 }
 #portfolio .inner .portInner {
 	float: left;
@@ -334,7 +340,7 @@ div.jqcloud span.w1 {
 }
 #portfolio .inner ul {
 	position: absolute; left: 0; bottom: 0;
-	width: 1900px;
+	width: 3000px;
 }
 #portfolio .inner ul li {
 	display: inline-block;

@@ -1,5 +1,5 @@
 $(function(){
-	var n=0;
+	var n1=0;
 	var pos=0;
 	var h;
 
@@ -21,16 +21,16 @@ $(function(){
 		// if($("html").is(":animated")) return;
 
 		e.preventDefault();
-		n=$(this).index();
-		pos=n*h;
+		n1=$(this).index();
+		pos=n1*h;
 
 		$("html").animate({scrollTop:pos}, 700, function(){
 			$(".container > section").removeClass("active");
-			$(".container > section").eq(n).addClass("active");
+			$(".container > section").eq(n1).addClass("active");
 			$("#gnb li").removeClass("on");
-			$("#gnb li").eq(n).addClass("on");
+			$("#gnb li").eq(n1).addClass("on");
 		});
-		if(n%2 == 1){
+		if(n1%2 == 1){
 			$("#header").addClass("Black")
 		}
 		else {
@@ -43,88 +43,84 @@ $(function(){
 		// if($("html").is(":animated")) return;
 
 		if(delta > 0){
-			if(n > 0){ n=n-1; }
+			if(n1 > 0){ n1=n1-1; }
 			else return;
 		}
 		else{
-			if(n < 4){ n=n+1; }
+			if(n1 < 4){ n1=n1+1; }
 			else return;
 		}
 
-		if(n%2 == 1){
+		if(n1%2 == 1){
 			$("#header").addClass("Black")
 		}
 		else {
 			$("#header").removeClass("Black")
 		}
 
-		pos=n*h;
+		pos=n1*h;
 		$("html").stop().animate({scrollTop:pos}, 800, function(){
 			$(".container > section").removeClass("active");
-			$(".container > section").eq(n).addClass("active");
+			$(".container > section").eq(n1).addClass("active");
 			$("#gnb li").removeClass("on");
-			$("#gnb li").eq(n).addClass("on");
+			$("#gnb li").eq(n1).addClass("on");
 		});
 
 	});
 
-
-
 	// 포트폴리오
-	var n=0; // 갤러리 번호 변수
-	var w=920; // 갤러리 가로 크기 변수
-	var total=2; // 갤러리 전체 개수 변수
+	var n2=0; // 갤러리 번호 변수
+	var total=3; // 갤러리 전체 개수 변수
 	var amount=0; // 갤러리 움직일 위치 변수
 	var id=setInterval(leftMoving, 20000); // 갤러리 타이머 변수
 	$(".timer .gage").animate({width:"100%"}, 20000);
 
 
 	setTimeout(function(){ // 갤러리 초기 설정 타이머
-		// $(".slider_wrap .slider").css({width:total*w});
-		// $(".slider_wrap, .slider_wrap .slider").css({height:$(".slider_wrap img").height()});
-		// $(".top .title").html(titleArray[n]).css({opacity:0}).animate({opacity:1}, 500);
 		$(".pager .current").text("01");
 		$(".pager .total").text("0"+total);
 	}, 150);
 
-	$(".controls .prev").click(leftMoving);
-	$(".controls .next").click(rightMoving);
+	$(".btn .prev").click(rightMoving);
+	$(".btn .next").click(leftMoving);
 
 	$(".pause").click(function(){
 		clearInterval(id);
 		$(".timer .gage").stop().animate({width:0},800);
 	});
 	$(".play").click(function(){
-		$(".timer .gage").animate({width:"100%"}, 20000);
-		id=setInterval(rightMoving, 9000);
+		clearInterval(id);
+		id=setInterval(leftMoving, 20000);
+		$(".timer .gage").stop().animate({width:"100%"}, 20000);
 	});
-
+	
 	function leftMoving(){ // 왼쪽 이동 함수
-		if(n < (total-1)){
-			n++;
-		}else{
-			n=0;
-		}
-		console.log(n);
-		
-		amount=n* -1 * 960 + "px";
-		$("#portfolio ul").animate({left:amount}, 800);
-		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
-		$(".pager .current").text("0"+(n+1));
-	}
-	function rightMoving(){ // 오른쪽 이동 함수
-		if(n > 0){
-			n--;
+		if(n2 < (total -1)) {
+			n2++;
 		}
 		else{
-			n=(total-1);
+			n2=0;
 		}
-		console.log(n);
-
-		amount=n* -1 * 960 + "px";
+		amount=n2* -1 * 960 + "px";
 		$("#portfolio ul").animate({left:amount}, 800);
 		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
-		$(".pager .current").text("0"+(n+1));
+		$(".pager .current").text("0"+(n2+1));
+		clearInterval(id);
+		id=setInterval(leftMoving, 20000);
+	}
+	function rightMoving(){ // 오른쪽 이동 함수
+		if(n2 > 0){
+			n2--;
+		}
+		else{
+			n2=(total-1);
+		}
+		amount=n2* -1 * 960 + "px";
+		$("#portfolio ul").animate({left:amount}, 800);
+		$(".timer .gage").stop().animate({width:0}, 0).animate({width:"100%"}, 20000);
+		$(".pager .current").text("0"+(n2+1));
+		clearInterval(id);
+		id=setInterval(leftMoving, 20000);
 	}
 
 	
