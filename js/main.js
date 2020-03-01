@@ -34,6 +34,18 @@ $(function(){
 		else {
 			$("#header").removeClass("Black")
 		}
+		$("#header").removeClass("on");
+	});
+
+	// 모바일 탭
+	$(".mobileTab").click(function(e){
+		e.preventDefault();
+		if($("#header").hasClass("on")){
+			$("#header").removeClass("on");
+		}
+		else{
+			$("#header").addClass("on");
+		}
 	});
 
 	// 마우스 휠
@@ -196,14 +208,4 @@ $(function(){
 	map.setZoomable(false); // 스크롤 막기
 	var zoomControl = new kakao.maps.ZoomControl(); // 확대 축소 버튼
 	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-	$(".mobileTab").click(function(e){
-		e.preventDefault();
-		if($("#header").hasClass("on")){
-			$("#header").removeClass("on");
-		}
-		else{
-			$("#header").addClass("on");
-		}
-	});
 });
