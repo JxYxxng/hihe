@@ -1,7 +1,7 @@
 $(function(){
-	var n1=0;
-	var pos=0;
-	var h;
+	var n1=0; // section 번호
+	var pos=0; // 이동 위치
+	var h; // 윈도우 높이
 
 	$(".container > section").eq(0).addClass("active");
 	$("#gnb li").eq(0).addClass("on");
@@ -36,7 +36,7 @@ $(function(){
 		}
 	});
 
-	// 마우스 스크롤
+	// 마우스 휠
 	$(".container").mousewheel(function(e, delta){
 		if(delta > 0){
 			if(n1 > 0){ n1=n1-1; }
@@ -64,15 +64,34 @@ $(function(){
 	});
 
 	// 포트폴리오
-	var n2=0; // 갤러리 번호 변수
-	var total=3; // 갤러리 전체 개수 변수
-	var w=1028; // 갤러리 가로 길이
-	var amount=0; // 갤러리 움직일 위치 변수
-	var id=setInterval(leftMoving, 20000); // 갤러리 타이머 변수
+	var n2=0;
+	var total=2; // 박스 개수
+	var winW=0; // 윈도우 가로
+	var w=0; // 갤러리 가로
+	var amount=0; // ul 위치
+	var id=setInterval(leftMoving, 20000); // 갤러리 타이머
 	$(".timer .gage").animate({width:"100%"}, 20000);
+	
+	var timer;
 
+	$(window).resize(function(){
+		clearTimeout(timer);
 
-	setTimeout(function(){ // 갤러리 초기 설정 타이머
+	 	timer=setTimeout(function(){
+			winW=$(window).width();
+
+			if( winW > 1280 ) {
+				w=1028;
+			}
+			else {
+				w=908;
+			}
+		}, 100);
+	});
+	$(window).trigger("resize");
+	
+
+	setTimeout(function(){
 		$(".pager .current").text("01");
 		$(".pager .total").text("0"+total);
 	}, 150);
@@ -90,7 +109,7 @@ $(function(){
 		$(".timer .gage").stop().animate({width:"100%"}, 20000);
 	});
 	
-	function leftMoving(){ // 왼쪽 이동 함수
+	function leftMoving(){
 		if(n2 < (total -1)) {
 			n2++;
 		}
@@ -104,7 +123,7 @@ $(function(){
 		clearInterval(id);
 		id=setInterval(leftMoving, 20000);
 	}
-	function rightMoving(){ // 오른쪽 이동 함수
+	function rightMoving(){
 		if(n2 > 0){
 			n2--;
 		}
@@ -125,7 +144,7 @@ $(function(){
 	var word_list = [
 		{text: "jQuery", weight: 13, url: ""},
 		{text: "JxYxxng", weight: 10.5, url: ""},
-		{text: "Parallax", weight: 9.4}, // url: "javascript:alert('JavaScript in URL is OK!');
+		{text: "Parallax", weight: 9.4},
 		{text: "HTML5", weight: 8},
 		{text: "CSS3", weight: 6.2},
 		{text: "API", weight: 5},
@@ -177,4 +196,14 @@ $(function(){
 	map.setZoomable(false); // 스크롤 막기
 	var zoomControl = new kakao.maps.ZoomControl(); // 확대 축소 버튼
 	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+	$(".mobileTab").click(function(e){
+		e.preventDefault();
+		if($("#header").hasClass("on")){
+			$("#header").removeClass("on");
+		}
+		else{
+			$("#header").addClass("on");
+		}
+	});
 });

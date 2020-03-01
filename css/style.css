@@ -49,6 +49,7 @@ section:nth-child(2n+1) .inner h3 {
 	width: 200px;
 	height: 100vh;
 	border-right: 1px solid #ccc;
+	transition: left 0.5s;
 }
 #header h1 {
 	width: 160px;
@@ -89,6 +90,28 @@ section:nth-child(2n+1) .inner h3 {
 #gnb ul li a:hover span {
 	opacity: 1;
 	font-weight: 700;
+}
+#header .mobileTab {
+	position: fixed; left: 0; top: 20px;
+}
+#header .mobileTab a {
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+#header.on .mobileTab {
+	left: 200px;
+}
+@media only screen and (max-width:1110px){
+	#header {
+		left: -200px;
+	}
+	#header.on {
+		left: 0;
+	}
+	.inner {
+		width: 100%;
+	}
 }
 
 /* 메인 */
@@ -335,13 +358,12 @@ div.jqcloud span.w1 {
 	position: relative;
 	width: 1028px; /**/
 	height: 100%;
-	/* margin: 0 auto; */
 	margin-left: 50px;
 	overflow: hidden;
 }
 #portfolio .inner ul {
 	position: absolute; left: 0; bottom: 0;
-	width: 3084px; /**/
+	width: 2056px; /**/
 }
 #portfolio .inner ul li {
 	display: inline-block;
@@ -364,7 +386,7 @@ div.jqcloud span.w1 {
 	float: left;
 	width: 270px;
 	height: 100%;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 20x;
 	background-color: #ccc;
 	border: 1px solid #ccc;
@@ -423,7 +445,18 @@ div.jqcloud span.w1 {
 	text-indent: -9999px;
 	overflow: hidden;
 }
-
+@media only screen and (max-width:1280px){
+	#portfolio .inner .portInner {
+		width: 908px; /**/
+		margin: 0 auto;
+	}
+	#portfolio .inner ul {
+		width: 1816px; /**/
+	}
+	#portfolio .inner ul li {
+		margin-left: 10px;
+	}
+}
 /* 컨택트 */
 #contact .inner {
 	position: relative;
