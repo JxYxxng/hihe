@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>안녕하세요</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="slick.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="slick.js"></script>
+<script>
+
+</script>
+<style>
+* {box-sizing: border-box;}
+body, h1, h2, h3, h4, ul, ol, p {margin: 0; padding: 0;}
+body {color: #ccc;}
+::-moz-selection {color: #fff; background-color: #daddfb;}
+::selection {color: #fff; background-color: #daddfb;}
+li {list-style: none;}
+a {text-decoration: none; color: #ccc;}
+img {width: 100%;}
+.clear::after {content: ""; display: block; clear: both;}
+
+
+
+
+/* common */
+.wrap {padding: 10px;}
+h2 {text-align: center; font-weight: 400; color: #daddfb;}
+
+/* 헤더 */
+#header {width: 100%; padding: 20px;}
+#header h1 {text-align: center;}
+#gnb {padding: 10px 0; text-align: center;}
+#gnb ul li {display: inline-block;}
+
+/* b01 */
+.b01 {width: 500px; margin: 0 auto 50px auto; padding: 30px 30px 50px 30px; border: 2px solid #daedfb;}
+.b01 h2 {padding-bottom: 30px;}
+.b01 p {line-height: 150%;}
+
+
+/* section02 */
+.b02 {width: 500px; margin: 0 auto 50px auto; padding: 30px 30px 50px 30px; border: 2px solid #daedfb;}
+.b02 h2 {padding-bottom: 20px;}
+.b02 .img_preview {width: 300px; margin: 0 auto;}
+/* .b02 .slick-dots {text-align: center;}
+.b02 .slick-dots li {display: inline-block; width: 10px; height: 10px; margin-left: 5px; border-radius: 50%; text-indent: -999px; background-color:#daedfb; overflow: hidden; cursor: pointer;}
+.b02 .slick-dots li:first-child {margin-left: 0;}
+.b02 .slick-dots li.slick-active {background-color: #daddfb;} */
+.b02 .nav_wrap {position: relative; width: 350px; margin: 20px auto 0 auto;}
+.b02 .slick-track .slick-slide {margin: 5px; transition: all 300ms ease;}
+.b02 .slick-track .slick-center {transform: scale(1.2);}
+.b02 .nav_wrap .img_prev, .nav_wrap .img_next {position: absolute; top: 27%; width: 19px; height: 19px; background-color: #daddfb; color: #fff; border-radius: 50%; font-size: 12px; text-align: center; cursor: pointer; line-height: 16px;}
+.b02 .nav_wrap .img_prev {left: -30px; text-indent: -2px;}
+.b02 .nav_wrap .img_next {right: -30px; text-indent: 2px;}
+
+
+/* section03 */
+.b03 {position: relative; width: 500px; margin: 50px auto; padding-top: 250px;}
+.b03 ul {text-align: center;}
+.b03 ul li {display: inline-block; width: 25px;}
+.b03 ul li img {vertical-align: bottom;}
+.b03 .text, .b03 .info {display:none; position: absolute; left: 50%; top: 50px; width: 320px; margin-left: -160px; padding: 30px 0; border: 1px solid #daddfb; line-height: 150%;}
+.b03 .text {display: block; text-align: center;}
+
+</style>
+
+<script>
+  $(document).ready(function(){
+    var a=0; // 메뉴 인덱스
+    var move=0; // 이동변수
+  	var firstFlag=false;
+
+    // 초기화
+  	setTimeout(function(){
+  		$("html").animate({scrollTop : 0}, 500, function(){
+  			firstFlag=true;
+  			$(window).trigger("scroll");
+  		});
+  	}, 10);
+
+
+    // gnb 이동
+  	$("#gnb > ul > li").click(function(e){
+  		e.preventDefault();
+  		a=$(this).index();
+  		move=$(".section").eq(a).offset().top;
+
+  		$("html").animate({"scrollTop":move},800);
+  	});
+
+
+    // 갤러리
+    $('.img_preview').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      // dots: true,
+      fade: true,
+      asNavFor: '.img_nav'
+    });
+    $('.img_nav').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: '.img_preview',
+      centerMode: true,
+      focusOnSelect: true,
+      prevArrow: $(".img_prev"),
+      nextArrow: $(".img_next"),
+    });
+
+
+    // 소개
+    $(".b03 li img").click(function(){
+      if($(this).parents("li").children(".info").is(":visible")){
+        $(this).parents("li").children(".info").fadeOut(500);
+        $(".b03 .text").fadeIn(500);
+      }
+      else {
+        $(".info").fadeOut(500);
+        $(this).parents("li").children(".info").fadeIn(500);
+        $(".b03 .text").fadeOut(500);
+      }
+    });
+
+    $(document).click(function(e){
+      if($(e.target).is('.b03 li img') || $(e.target).is('.b03 .info')) {}
+      else {
+        $(".info").fadeOut(500);
+        $(".b03 .text").fadeIn(500);
+      }
+    });
+
+  });
+</script>
+
+</head>
+
+<body>
+<div class="wrap">
+  <header id="header">
+    <h1><a href="">로고</a></h1>
+    <nav id="gnb">
+      <ul>
+        <li><a href="">공지사항</a></li>
+        <li><a href="">갤러리</a></li>
+        <li><a href="">소개</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="section b01">
+    <h2>공지사항</h2>
+    <p>
+      안녕하세요. 공지사항입니다. 공지사항입니다.<br /><br />
+      저렴한 가격 : 트렌디하고 퀄리티 높은 디자인들을 저렴하게 제작 가능합니다. 공지사항입니다.<br /><br />
+      모바일웹 무료제작 : 홈페이지를 제작했을 뿐인데!! 모바일웹이 무료?!!! 3page 모바일 웹 무료제작.<br /><br />
+      LTE급 빠른 제작 : 자료준비가 완료되는대로 2~3일 이내에 제작완료!! (오탈자 무료수정, 컨펌불가)
+    </p>
+  </div>
+
+  <div class="section b02">
+    <h2>갤러리</h2>
+    <div class="img_preview">
+      <div><img src="banner_img1.jpg"></div>
+      <div><img src="banner_img2.jpg"></div>
+      <div><img src="banner_img3.jpg"></div>
+      <div><img src="banner_img1.jpg" style="opacity: 0.5;"></div>
+      <div><img src="banner_img2.jpg" style="opacity: 0.5;"></div>
+      <div><img src="banner_img3.jpg" style="opacity: 0.5;"></div>
+    </div>
+    <div class="nav_wrap">
+      <div class="img_nav">
+        <div><img src="banner_img1.jpg"></div>
+        <div><img src="banner_img2.jpg"></div>
+        <div><img src="banner_img3.jpg"></div>
+        <div><img src="banner_img1.jpg" style="opacity: 0.5;"></div>
+        <div><img src="banner_img2.jpg" style="opacity: 0.5;"></div>
+        <div><img src="banner_img3.jpg" style="opacity: 0.5;"></div>
+      </div>
+      <p class="img_prev">◀</p>
+      <p class="img_next">▶</p>
+    </div>
+  </div>
+
+  <div class="section b03">
+    <p class="text">아녕</p>
+    <ul>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+      <li>
+        <img src="banner_img1.jpg">
+        <p class="info">안녕하세요.<br />이 부분은 설명입니다.<br /> 반갑습니다.<br />더 길게 쓰기<br />다섯번째 줄</p>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
